@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 2.5</title>
+    <style type = "text/css">
+        .sp:hover {cursor: zoom-in;}
+        .sm:hover {cursor: zoom-out;}
+        .v {border-radius: 50%;}
+    </style>   
+</head>
+<body>
+    <img src='bear-s640.jpg' name='оригинал' id="исходное" class="sp v" onClick="размер_изменить (this.src)">
+    <script type="text/javascript">
+    узел_img=document.getElementById("исходное")
+    console.log(узел_img.classList)
+    function размер_изменить (x) {
+        ссылка=document.getElementById("исходное")
+        if (x.indexOf("s640") > 0) {
+           x=x.replace ("s640","s1280")
+           ссылка.classList.add("sm")
+           ссылка.classList.remove("sp")
+           document.оригинал.src=x
+           console.log(узел_img.classList)
+           }
+        else {
+           x=x.replace ("s1280","s640")
+           ссылка.classList.add("sp")
+           ссылка.classList.remove("sm")
+           document.оригинал.src=x
+           console.log(узел_img.classList)
+           }
+    }
+    </script>
+</body>
+</html>
